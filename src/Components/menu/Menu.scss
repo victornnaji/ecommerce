@@ -1,0 +1,63 @@
+@import "../../variables.scss";
+
+.menu-container{
+    padding-top: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-icon-white{
+    filter: none;
+   
+}
+
+.logo-icon-black{
+    filter: invert(1);
+}
+
+.menu-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+
+    @media (max-width: 1024px){
+        display: none;
+    }
+}
+.MuiSvgIcon-root {
+    fill: currentColor;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    font-size: 2.5rem;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.hamburger-menu{
+    position: absolute;
+    top: .7rem;
+    right: 0;
+
+    @media (min-width: 1024px){
+        display: none;
+    }
+}
+
+.MuiButtonBase-root:focus {
+    outline: none;
+}
+
+.menu-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+
+    @media (max-width: 1024px){
+        display: none;
+    }
+}

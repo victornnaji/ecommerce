@@ -1,0 +1,94 @@
+@import "../../../variables.scss";
+
+.hero-container{
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.3)
+      ),
+     url(../../../assets/hero_image2.jpg);
+     background-position: right;
+     background-size: cover;
+     height: 100vh;
+     width: 100vw;
+     position: relative;
+
+     @media (max-width: 1024px){
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.3)
+      ),
+     url(../../../assets/hero_mobile.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 60vh;
+  }
+}
+
+.hero-footer{
+  position: absolute;
+  bottom: 0rem;
+  background-color: #fff;
+  height: 10rem;
+  width: 70%;
+  border-top-right-radius: 60px;
+
+  @media (max-width: 1024px){
+    display: none;
+  }
+}
+
+.hero-contents{
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+
+  @media (max-width: 1024px){
+    left: 37%;
+    top: 60%;
+  }
+
+}
+
+.hero-heading{
+  display: inline-block;
+  width: 10ch;
+  font-size: 3rem;
+  color: #fff;
+
+  @media (max-width: 1024px){
+    font-size: 2.6rem;
+  }
+}
+
+.button-bg{
+    color: white;
+    background-color: $color-orange;
+    border-radius: 40px;
+    height: 3rem !important;
+    width: 3rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-button{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 15ch;
+  
+  span{
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+.hero-footer-contents{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10rem;
+}
