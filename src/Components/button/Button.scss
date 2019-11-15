@@ -1,0 +1,14 @@
+.button{
+    padding: 13px 40px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+    display: inline-block;
+    border-radius: 50px;
+    font-size: .7rem;
+
+    &:hover{
+        filter: invert(1);
+        text-decoration: none;
+    }
+}
