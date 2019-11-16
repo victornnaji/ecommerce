@@ -6,6 +6,13 @@
     display: inline-block;
     border-radius: 50px;
     font-size: .7rem;
+    border: 1px solid #000;
+    cursor: pointer;
+
+    @media (max-width: 1024px){
+        padding: 10px 36px;
+        font-size: .5rem;
+    }
 
     &:hover{
         filter: invert(1);

@@ -1,0 +1,42 @@
+@import "../../variables.scss";
+.collection-items{
+    width: 18rem;
+    height: 20rem;
+    position: relative;
+
+    @media (max-width: 1024px){
+        width: 100%;
+    }
+
+    .discount-price{
+        position: absolute;
+        top: 10px;
+        left: 35px;
+    }
+}
+
+.collection-image{
+    height: 90%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.prices{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.6rem;
+    color: $color-red;
+
+    .oldPrice{
+        color: $color-grey;
+        font-size: 1.4rem;
+        text-decoration: line-through;
+    }
+}
+
+
+

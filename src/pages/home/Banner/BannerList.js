@@ -9,7 +9,8 @@ const BannerList = () => {
             imageUrl: "images/new_arrival.png",
             id: 1,
             width: "33rem",
-            button: "Show collection"
+            button: "Show collection",
+            link: 'shop'
         },
 
         {
@@ -17,7 +18,8 @@ const BannerList = () => {
             imageUrl: "images/beach_tshirt.png",
             id: 2,
             width: "22rem",
-            button: "More Details"
+            button: "More Details",
+            link: ""
         },
 
         {
@@ -26,7 +28,8 @@ const BannerList = () => {
             id: 3,
             width: "22rem",
             button: "View All",
-            discount:"-50%"
+            discount:"-50%",
+            link:""
         }
 
     ];
@@ -37,7 +40,7 @@ const BannerList = () => {
             <div  className="bannerlist-container">
                 {state.map( item => (
                     <Banner key={item.id} image={item.imageUrl} width={item.width}
-                    title={item.title} buttontext={item.button} discount={item.discount}
+                    title={item.title} buttontext={item.button} discount={item.discount} link={item.link}
                     />
                 ))}
             </div>

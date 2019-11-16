@@ -3,9 +3,9 @@ import "./Button.scss";
 
 const Button = (props) => {
     return (
-        <a href="null" style={{backgroundColor: props.color}} className="button">
+        <div style={{backgroundColor: props.color}} onClick={props.handleclick} className="button">
             {props.text}
-        </a>
+        </div>
     )
 }
 
