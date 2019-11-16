@@ -4,18 +4,22 @@ import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import Burger from '../Burger/Burger';
+import {Link} from "react-router-dom";
 
-const Menu = ({color}) => {
+const Menu = ({color, backgroundColor}) => {
     return (
-        <div style={{color: color}} className="container">
+        <div style={{color: color, backgroundColor}} className="menu-content">
+        <div className="container">
             <div className="menu-container">
                 <div className="logo">
+                    <Link to="/">
                     <img src={require("../../assets/logo.png")} alt="" className={`logo-icon-${color}`}/>
+                    </Link>
                 </div>
                 <div className="menu-items">
-                    <div className="menu-item">Men</div>
-                    <div className="menu-item">Women</div>
-                    <div className="menu-item">Kids</div>
+                    <Link to ="/men" className="menu-item">Men</Link>
+                    <Link to ="/women" className="menu-item">Women</Link>
+                    <Link to ="/kids" className="menu-item">Kids</Link>
                 </div>
                 <div className="menu-icons">
                     <div className="search">
@@ -33,6 +37,7 @@ const Menu = ({color}) => {
             <div className="hamburger-menu">
                 <Burger />
             </div>
+        </div>
         </div>
     )
 }

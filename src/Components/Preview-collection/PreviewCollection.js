@@ -8,7 +8,7 @@ const PreviewCollection = ({title, items}) => {
         <div className="previewcollection-container">
             <div className="container">
                 <div className="title">
-                    <h1>{title.toUpperCase()}</h1>
+                    <div className="heading">{title.toUpperCase()}</div>
                     <Button color="white" text="view all"/>
                 </div>
                 <div className="preview">

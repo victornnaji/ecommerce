@@ -9,7 +9,7 @@ const SHOP_DATA = [
           name: 'Brown Brim',
           imageUrl: 'https://cdn.pixabay.com/photo/2017/12/24/13/35/baby-3036925_1280.jpg',
           price: 25,
-          newIn: true,
+          newIn: false,
           category: 'kids',
           discount: "25%",
           oldPrice: 75
@@ -45,7 +45,7 @@ const SHOP_DATA = [
           name: 'Baby winter jacket',
           imageUrl: 'https://cdn11.bigcommerce.com/s-4wjqlc/images/stencil/500x659/products/8479/16221/5CrHTWbo__62354.1561831491.jpg?c=2',
           price: 18,
-          newIn: true,
+          newIn: false,
            category: 'kids'
         },
         {
@@ -249,5 +249,17 @@ const SHOP_DATA = [
       ]
     }
   ];
+
+  let latest = SHOP_DATA.map(item => item.items.filter(x => x.newIn));
+  latest = latest.reduce((acc, val) => acc.concat(val), []);
+
+  const newCol = {
+      id: 4,
+      title:"latest collection",
+      routeName: "latest-collection",
+      items: latest
+  }
+
+  SHOP_DATA.push(newCol);
 
   export default SHOP_DATA;

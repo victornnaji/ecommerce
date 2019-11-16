@@ -1,7 +1,15 @@
 @import "../../variables.scss";
 
+.menu-content{
+    width: 100%;
+
+    @media (max-width: 1024px){
+        background-color: #fff !important;
+        color: #000 !important;
+    }
+}
 .menu-container{
-    padding-top: 1.3rem;
+    padding: 1.3rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,6 +17,10 @@
 
 .logo-icon-white{
     filter: none;
+
+    @media( max-width: 1024px){
+        filter: invert(1);
+    }
    
 }
 
@@ -58,6 +70,26 @@
     width: 10%;
 
     @media (max-width: 1024px){
-        display: none;
+        transform: translateX(-2.9rem) translateY(-2.5px);
+        width: 18%;
+    }
+
+    .user{
+        @media (max-width: 1024px){
+            display: none;
+        }
+    }
+}
+
+.menu-item{
+    color: currentColor;
+    transition: all .2s;
+    cursor: pointer;
+    
+
+    &:hover, &:active, &:focus{
+        color: currentColor;
+        text-decoration: none;
+        transform: scale(1.5);
     }
 }

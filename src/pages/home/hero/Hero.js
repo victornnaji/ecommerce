@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from '../../../Components/menu/Menu';
+// import Menu from '../../../Components/menu/Menu';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import "./Hero.scss";
 import HeroFooter from '../../../Components/hero-footer/HeroFooter';
@@ -7,7 +7,6 @@ import HeroFooter from '../../../Components/hero-footer/HeroFooter';
 const Hero = () => {
     return (
         <div className="hero-container">
-            <Menu color="white"/>
             <div className="container">
                 <div className="hero-contents">
                     <div className="hero-heading">Sale of the summer collection</div>

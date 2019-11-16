@@ -4,19 +4,8 @@ import PreviewCollection from '../../Components/Preview-collection/PreviewCollec
 
 
 const Preview = () => {
-    const [datas, setdatas] = useState(SHOP_DATA);
-    let latest = datas.map(item => item.items.filter(x => x.newIn));
-    latest = latest.reduce((acc, val) => acc.concat(val), []);
+    const [datas] = useState(SHOP_DATA);
 
-    const newCol = {
-        id: 4,
-        title:"latest-collection",
-        routeName: "latest-collection",
-        items: latest
-    }
-
-    datas.push(newCol);
-    
     return (
         <div className="preview-container">
             {datas.map(({id, ...others}) => (
