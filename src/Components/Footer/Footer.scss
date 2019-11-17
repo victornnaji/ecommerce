@@ -1,0 +1,141 @@
+@import "../../variables.scss";
+.footer-container{
+    margin: 6rem 0 1rem 0;
+}
+
+.footer-cta{
+    height: 10rem;
+    background: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.4), 
+        rgba(0, 0, 0, 0.4)),
+      url(../../assets/footer-img.png);
+      background-size: cover;
+      background-position: center;
+}
+
+.footer-cta-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10rem;
+    
+    @media (max-width: 1024px){
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.footer-text{
+    color: #fff;
+    width: 30ch;
+}
+
+.footer-form{
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: 1024px){
+        flex-direction: column;
+        justify-content: space-around;
+        height: 55%;
+        align-items: center;
+    }
+}
+
+.form-input{
+    padding: 0 .5rem;
+    width: 66%;
+    border: none;
+    border-radius: 40px;
+
+    @media (max-width: 1024px){
+        height: 2.5rem;
+        width: 100%;
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
+
+.footer-menu{
+    margin-top: 4rem;
+    display: flex;
+
+    @media (max-width: 1024px){
+        flex-direction: column-reverse;
+    }
+}
+
+.description{
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (max-width: 1024px){
+        align-items: center;
+    }
+}
+
+.footer-desc{
+    color: $color-grey;
+    font-size: .7rem;
+    width: 90%;
+
+    @media (max-width: 1024px){
+        width: 100%;
+        font-size: .9rem;
+        text-align: center;
+    }
+}
+
+.social-links{
+    color: $color-font-grey;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1024px){
+        width: 50%;
+    }
+}
+
+.footer-menu-items{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footer-menu-item{
+    margin-bottom: 2rem;
+    :first-child{
+      margin-bottom: 3rem;
+      font-weight: 700;
+      font-size: .9rem;
+      color: #000;
+      
+      @media(max-width: 1024px){
+          font-size: .8rem;
+      }
+    }
+    
+    color: $color-grey;
+    font-size: .8rem;
+    
+    @media(max-width: 1024px){
+        font-size: .7rem;
+        text-align: center;
+    }
+}
+
+.copyright{
+    border-top: 1px solid $color-font-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    text-align: center;
+}

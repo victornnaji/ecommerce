@@ -1,10 +1,80 @@
 import React from 'react';
 import "./Footer.scss";
+import Button from '../button/Button';
+import {Link} from "react-router-dom";
+import FacebookIcon from '@material-ui/icons/Facebook';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 const Footer = () => {
     return (
-        <div className="container">
-            hello footer
+        <div className="footer-container">
+            <div className="container" style={{marginBottom: "2.5rem"}}>
+                <div className="footer-cta">
+                    <div className="col-lg-8 offset-lg-2">
+                        <div className="footer-cta-content">
+                            <div className="footer-text">
+                            Subscribe to our newsletter and receive exclusive offers every week
+                            </div>
+                            <div className="footer-form">
+                                <input className="form-input" type="email" name="email" id="" placeholder="Enter your email"/>
+                                <span><Button text="Subscribe" color="#FBB03B"/></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="footer-menu">
+                    <div className="description">
+                        <div className="logo">
+                                <Link to="/">
+                                    <img src={require("../../assets/logo.png")} alt="" style={{filter: "invert(1)"}}/>
+                                </Link>
+                            </div>
+
+                            <div className="footer-desc">
+                                Website designed bu UIKIT and brought to life by Nnaji Victor. Built with React, Redux,
+                                firebase, redux saga etc.
+                            </div>
+
+                            <div className="social-links">
+                                <FacebookIcon />
+                                <TwitterIcon />
+                                <GitHubIcon />
+                                <InstagramIcon />
+                                <YouTubeIcon />
+                            </div>
+                        </div>
+                    <div className="footer-menu-items">
+                        <div className="footer-menu-item">
+                            <p>Shopping online</p>
+                            <p>Order status</p>
+                            <p>Shipping and delivery</p>
+                            <p>Returns</p>
+                            <p>Payment Options</p>
+                            <p>Contact us</p>
+                        </div>
+                        <div className="footer-menu-item">
+                            <p>Information</p>
+                            <p>Gift cards</p>
+                            <p>Find a store</p>
+                            <p>Newsletter</p>
+                            <p>Become a member</p>
+                            <p>Site feedback</p>
+                        </div>
+                        <div className="footer-menu-item">
+                            <p>Contact</p>
+                            <p>victornnaji.c@gmail.com</p>
+                            <p>+2347017510120</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="copyright">
+            DESIGN BY NNAJI VICTOR -© {new Date().getFullYear()}. ALL RIGHTS RESERVED.
+            </div>
         </div>
     )
 }

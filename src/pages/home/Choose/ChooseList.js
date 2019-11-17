@@ -38,7 +38,7 @@ const ChooseList = () => {
                </div>
                 <div className="row">
                    {chooseList.map( list => (
-                    <div className="col-lg-3 col-6">
+                    <div className="col-lg-3 col-6" key={list.id}>
                         <Choose {...list}/>
                     </div>
                    ))}
