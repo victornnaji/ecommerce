@@ -3,8 +3,9 @@ import "./Menu.scss";
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
-import Burger from '../Burger/Burger';
 import {Link} from "react-router-dom";
+import {ReactComponent as Logo} from "../../assets/crown.svg";
+import TemporaryDrawer from './ToogleMenu';
 
 const Menu = ({color, backgroundColor}) => {
     return (
@@ -13,7 +14,7 @@ const Menu = ({color, backgroundColor}) => {
             <div className="menu-container">
                 <div className="logo">
                     <Link to="/">
-                    <img src={require("../../assets/logo.png")} alt="" className={`logo-icon-${color}`}/>
+                        <Logo />
                     </Link>
                 </div>
                 <div className="menu-items">
@@ -35,7 +36,7 @@ const Menu = ({color, backgroundColor}) => {
             </div>
 
             <div className="hamburger-menu">
-                <Burger />
+                <TemporaryDrawer />
             </div>
         </div>
         </div>

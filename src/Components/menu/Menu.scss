@@ -51,7 +51,7 @@
 
 .hamburger-menu{
     position: absolute;
-    top: .7rem;
+    top: 1rem;
     right: 0;
 
     @media (min-width: 1024px){
@@ -91,5 +91,11 @@
         color: currentColor;
         text-decoration: none;
         transform: scale(1.5);
+    }
+}
+
+.logotest{
+    @media(max-width: 1024px){
+        filter: brightness(1) !important;
     }
 }

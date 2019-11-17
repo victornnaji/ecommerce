@@ -7,6 +7,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import {ReactComponent as Logo} from "../../assets/crown.svg"
 
 const Footer = () => {
     return (
@@ -30,7 +31,7 @@ const Footer = () => {
                     <div className="description">
                         <div className="logo">
                                 <Link to="/">
-                                    <img src={require("../../assets/logo.png")} alt="" style={{filter: "invert(1)"}}/>
+                                    <Logo />
                                 </Link>
                             </div>
 
