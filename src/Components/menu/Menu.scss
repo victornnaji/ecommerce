@@ -67,7 +67,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 10%;
+    width: 15%;
+    cursor: pointer;
 
     @media (max-width: 1024px){
         transform: translateX(-2.9rem) translateY(-2.5px);
@@ -98,4 +99,8 @@
     @media(max-width: 1024px){
         filter: brightness(1) !important;
     }
+}
+
+.signin_image{
+    height: 1.5rem;
 }

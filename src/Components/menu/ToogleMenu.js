@@ -83,8 +83,8 @@ const useStyles = makeStyles({
 
       return (
         <div>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-                 <MenuIcon onClick={toggleDrawer('right', true)}/>
+            <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer('right', true)}>
+                 <MenuIcon />
             </IconButton>
             <Drawer anchor="right" open={state.right} onClose={toggleDrawer('right', false)}>
                 {sideList('right')}

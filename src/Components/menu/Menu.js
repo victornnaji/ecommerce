@@ -6,10 +6,13 @@ import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined'
 import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/crown.svg";
 import TemporaryDrawer from './ToogleMenu';
+import {withRouter} from "react-router-dom";
+import {auth} from "../../firebase/firebase.util";
 
-const Menu = ({color, backgroundColor}) => {
+const Menu = ({currentUser}) => {
+
     return (
-        <div style={{color: color, backgroundColor}} className="menu-content">
+        <div className="menu-content">
         <div className="container">
             <div className="menu-container">
                 <div className="logo">
@@ -29,9 +32,20 @@ const Menu = ({color, backgroundColor}) => {
                     <div className="cart">
                         <ShoppingCartOutlinedIcon />
                     </div>
-                    <div className="user">
-                        <PersonOutlineOutlinedIcon />
-                    </div>
+                    {
+                        currentUser ? 
+                        <div className="user" onClick={() => auth.signOut()}>
+                           <span class="signinuser"> 
+                              <img src={require("../../assets/user.png")} alt="" className="signin_image"/> 
+                          </span> Sign Out
+                        </div> :
+                        <div className="user">
+                            <PersonOutlineOutlinedIcon /> 
+                            <span>
+                                <Link to ="/signin" className="menu-item">Sign in</Link>
+                            </span>
+                        </div>
+                    }
                 </div>
             </div>
 
@@ -43,4 +57,4 @@ const Menu = ({color, backgroundColor}) => {
     )
 }
 
-export default Menu;
+export default withRouter(Menu);

@@ -6,21 +6,49 @@ import Menu from './Components/menu/Menu';
 import "./App.scss";
 import Footer from './Components/Footer/Footer';
 import Signin from './pages/signing/Signin';
+import {withRouter} from 'react-router-dom'
+import { auth } from './firebase/firebase.util';
 
 
 
-function App() {
-  return (
-    <div className="App">
-        <Menu color="black" backgroundColor="white"/>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/shop" component={newCollection} />
-          <Route exact path="/signin" component={Signin} />
-        </Switch>
-        <Footer />
-    </div>
-  );
+class App extends React.Component {
+
+  constructor(){
+    super();
+
+    this.state = {
+      currentUser : null
+    };
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount(){
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
+      this.setState({currentUser : user});
+
+      console.log(user);
+    })
+  }
+
+  componentWillUnmount(){
+    this.unsubscribeFromAuth();
+  }
+
+
+    render(){
+      return (
+        <div className="App">
+            <Menu currentUser={this.state.currentUser}/>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/shop" component={newCollection} />
+              <Route exact path="/signin" component={Signin} />
+            </Switch>
+            <Footer />
+        </div>
+      );
+    }
 }
 
-export default App;
+export default withRouter(App);

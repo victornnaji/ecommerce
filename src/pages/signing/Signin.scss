@@ -1,3 +1,18 @@
 .signin-container{
     height: 100vh;
+    margin-top: 3rem;
+}
+
+.goback-container{
+    margin-bottom: 3rem;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+
+    @media (max-width: 1024px){
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
