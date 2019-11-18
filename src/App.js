@@ -7,7 +7,7 @@ import "./App.scss";
 import Footer from './Components/Footer/Footer';
 import Signin from './pages/signing/Signin';
 import {withRouter} from 'react-router-dom'
-import { auth } from './firebase/firebase.util';
+import { auth, createUserProfileDocument } from './firebase/firebase.util';
 
 
 
@@ -24,10 +24,8 @@ class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount(){
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({currentUser : user});
-
-      console.log(user);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async user => {
+      createUserProfileDocument(user);
     })
   }
 

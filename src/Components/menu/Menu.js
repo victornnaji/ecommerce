@@ -35,7 +35,7 @@ const Menu = ({currentUser}) => {
                     {
                         currentUser ? 
                         <div className="user" onClick={() => auth.signOut()}>
-                           <span class="signinuser"> 
+                           <span className="signinuser"> 
                               <img src={require("../../assets/user.png")} alt="" className="signin_image"/> 
                           </span> Sign Out
                         </div> :
