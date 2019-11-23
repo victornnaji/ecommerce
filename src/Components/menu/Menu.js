@@ -6,8 +6,8 @@ import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined'
 import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/crown.svg";
 import TemporaryDrawer from './ToogleMenu';
-import {withRouter} from "react-router-dom";
 import {auth} from "../../firebase/firebase.util";
+import {connect} from "react-redux";
 
 const Menu = ({currentUser}) => {
 
@@ -57,4 +57,8 @@ const Menu = ({currentUser}) => {
     )
 }
 
-export default withRouter(Menu);
+const mapStateToProps = state => ({
+    currentUser: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(Menu);
