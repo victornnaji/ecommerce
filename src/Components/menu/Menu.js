@@ -54,7 +54,7 @@ const Menu = ({currentUser, hidden}) => {
             {hidden ? null : <CartDropdown />}
 
             <div className="hamburger-menu">
-                <TemporaryDrawer />
+                <TemporaryDrawer user={currentUser}/>
             </div>
         </div>
         </div>

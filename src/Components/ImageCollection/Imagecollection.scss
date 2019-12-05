@@ -3,6 +3,7 @@
     width: 18rem;
     height: 20rem;
     position: relative;
+    transition: all .2s;
 
     @media (max-width: 1024px){
         width: 100%;
@@ -12,6 +13,16 @@
         position: absolute;
         top: 10px;
         left: 35px;
+    }
+
+    &:hover{
+        .overlay{
+            width: 100%;
+        }
+
+        .btn{
+            display: block;
+        }
     }
 }
 
@@ -38,5 +49,17 @@
     }
 }
 
+
+.btn{
+    transform: translateY(-150px) translateX(8px);
+    display: none;
+}
+
+.overlay{
+    background: rgba(black, .5);
+    height: 100%;
+    width: 0;
+    
+}
 
 

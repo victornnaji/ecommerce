@@ -4,3 +4,14 @@
     right: 1rem;
     height: 3rem;
 }
+
+.signing-holder{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+
+    & .signin_image{
+        margin-right: 1rem;
+    }
+}

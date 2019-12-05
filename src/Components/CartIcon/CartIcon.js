@@ -7,7 +7,7 @@ import { toogleCartHidden } from '../../redux/cart/card.action';
 
 const CartIcon = ({toogleCartHidden}) => {
     return (
-        <div onClick={toogleCartHidden}>
+        <div onClick={toogleCartHidden} style={{transition: "all .2s"}}>
             <Badge badgeContent={0}  showZero color="secondary">
                  <ShoppingCartOutlinedIcon />
             </Badge>

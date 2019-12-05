@@ -8,11 +8,12 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import CloseIcon from '@material-ui/icons/Close';
 import MenuIcon from '@material-ui/icons/Menu';
 import {Link } from "react-router-dom";
 import "./Tooglemenu.scss";
+import {auth} from "../../firebase/firebase.util";
+
 
 const useStyles = makeStyles({
     list: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
     }
   });
   
-  export default function TemporaryDrawer() {
+ function TemporaryDrawer({user}) {
     const classes = useStyles();
     const [state, setState] = React.useState({
       right: false
@@ -67,13 +68,16 @@ const useStyles = makeStyles({
                 <ListItemText primary="Search"/>
             </ListItem>
 
-            <ListItem button key="2">
-                <ListItemIcon><ShoppingCartOutlinedIcon /></ListItemIcon>
-                <ListItemText primary="Cart"/>
-            </ListItem>
 
-            <ListItem button key="3">
-                <ListItemText primary="Sign In"/>
+            <ListItem button key="2">
+                {user ? <> <div onClick={() => auth.signOut()}>
+                <div className="signing-holder">
+                  <img src={require("../../assets/user.png")} alt="" className="signin_image"/>
+                  <ListItemText primary="Sign Out"/></div> 
+                </div>
+                  </> :
+                <Link to ="/signin" className="menu-item"><ListItemText primary="Sign in"/></Link>
+                }
             </ListItem>
           </List>
         </div>
@@ -92,3 +96,5 @@ const useStyles = makeStyles({
         </div>
       );
     };
+
+export default TemporaryDrawer;
