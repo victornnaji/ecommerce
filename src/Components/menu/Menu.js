@@ -1,15 +1,17 @@
 import React from 'react';
 import "./Menu.scss";
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
-import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import {Link} from "react-router-dom";
 import {ReactComponent as Logo} from "../../assets/crown.svg";
 import TemporaryDrawer from './ToogleMenu';
 import {auth} from "../../firebase/firebase.util";
 import {connect} from "react-redux";
+import CartDropdown from '../cart-dropdown/CartDropdown';
+import CartIcon from '../CartIcon/CartIcon';
 
-const Menu = ({currentUser}) => {
+
+const Menu = ({currentUser, hidden}) => {
 
     return (
         <div className="menu-content">
@@ -30,7 +32,7 @@ const Menu = ({currentUser}) => {
                         <SearchOutlinedIcon />
                     </div>
                     <div className="cart">
-                        <ShoppingCartOutlinedIcon />
+                        <CartIcon />
                     </div>
                     {
                         currentUser ? 
@@ -49,6 +51,8 @@ const Menu = ({currentUser}) => {
                 </div>
             </div>
 
+            {hidden ? null : <CartDropdown />}
+
             <div className="hamburger-menu">
                 <TemporaryDrawer />
             </div>
@@ -57,8 +61,9 @@ const Menu = ({currentUser}) => {
     )
 }
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = ({user: {currentUser}, cart:{hidden}}) => ({
+    currentUser,
+    hidden
 })
 
 export default connect(mapStateToProps)(Menu);
