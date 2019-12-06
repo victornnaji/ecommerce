@@ -4,8 +4,26 @@ import Badge from '@material-ui/core/Badge';
 import CustomButton from '../custom-button/CustomButton';
 import {connect} from "react-redux";
 import { addItem } from '../../redux/cart/card.action';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Imagecollection = ({item, addItem}) => {
+    const [open, setOpen] = React.useState(false);
+
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            setOpen(false);
+        }
+    
+        setOpen(false);
+      };
+
+
+    const handleClick = () => {
+        addItem(item);
+        setOpen(true);
+    }
     const {id, imageUrl, price, name, discount, oldPrice} = item;
     return (
         <div className="collection-items" key={id}>
@@ -19,10 +37,30 @@ const Imagecollection = ({item, addItem}) => {
                         <div className="newprice">{`$${price}`}</div>
                         {oldPrice !== undefined && <div className="oldPrice">{`$${oldPrice}`}</div> }
                     </div>
-                    <div className="btn" onClick={() => addItem(item)}>
+                    <div className="btn" onClick={handleClick}>
                        <CustomButton>Add to cart </CustomButton>
                     </div>
                 </div>
+
+                <Snackbar
+                anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+                }} 
+                open={open}
+                autoHideDuration={3000}
+                onClose={handleClose}
+                ContentProps={{
+                'aria-describedby': 'message-id',
+                }}
+                message={<span id="message-id">Item added to cart</span>}
+                action={[<IconButton key="close"
+                aria-label="close"
+                color="inherit"
+                onClick={handleClose} >
+                    <CloseIcon />
+                </IconButton>]}
+        />
         </div>
     )
 };

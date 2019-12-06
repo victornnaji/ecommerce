@@ -1,0 +1,28 @@
+.cart-items-holder {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+
+  :last-child{
+      margin-bottom: 2rem;
+  }
+}
+
+.cart-item-img{
+    height: 5rem;
+    width: 7rem;
+}
+
+.name{
+  font-weight: bold;
+
+}
+
+.item-details{
+    width: 50%;
+    font-size: .9rem;
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: space-between;
+}
