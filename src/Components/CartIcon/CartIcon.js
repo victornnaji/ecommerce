@@ -3,6 +3,7 @@ import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Badge from '@material-ui/core/Badge';
 import {connect} from "react-redux";
 import { toogleCartHidden } from '../../redux/cart/card.action';
+import { selectCartItemsCount } from '../../redux/cart/cart.selector';
 
 
 const CartIcon = ({toogleCartHidden, ItemCount}) => {
@@ -16,12 +17,13 @@ const CartIcon = ({toogleCartHidden, ItemCount}) => {
     )
 };
 
+
 const mapDispatchToProp = dispatch => ({
     toogleCartHidden: () => dispatch(toogleCartHidden())
 })
 
-const mapStateToProps = ({cart: {cartItem}}) => ({
-    ItemCount: cartItem.reduce((acc, cur) => acc + cur.quantity,0)
+const mapStateToProps = (state) => ({
+    ItemCount: selectCartItemsCount(state)
 })
 
 export default connect(mapStateToProps, mapDispatchToProp)(CartIcon);
