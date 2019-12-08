@@ -1,18 +1,22 @@
-import React, { useState }  from 'react';
-import SHOP_DATA from'../Shop/Shop.data';
+import React from 'react';
 import PreviewCollection from '../../Components/Preview-collection/PreviewCollection';
+import { selectCollections } from '../../redux/shop/shop.selector';
+import {connect} from "react-redux";
+import {createStructuredSelector} from "reselect";
 
 
-const Preview = () => {
-    const [datas] = useState(SHOP_DATA);
-
+const Preview = ({collections}) => {
     return (
         <div className="preview-container">
-            {datas.map(({id, ...others}) => (
+            {collections.map(({id, ...others}) => (
                 <PreviewCollection key={id} {...others}/>
             ))}
         </div>
     )
-}
+};
 
-export default Preview;
+const mapStateToProps = createStructuredSelector({
+    collections : selectCollections
+})
+
+export default connect(mapStateToProps)(Preview);

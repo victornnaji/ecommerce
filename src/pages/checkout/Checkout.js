@@ -15,6 +15,7 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Selected from '../../Components/Selected/Selected';
 
 const useStyles = makeStyles({
     root: {
@@ -79,6 +80,8 @@ const Checkout = ({cartItem, cartTotal}) => {
                         <div className="checkout"><Button text="CheckOut" color="#FBB03B"/></div>
                     </div>
                  </div>
+
+                 <Selected />
                 </div>
             </div>
         </div>
