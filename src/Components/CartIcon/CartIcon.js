@@ -7,7 +7,6 @@ import { selectCartItemsCount } from '../../redux/cart/cart.selector';
 
 
 const CartIcon = ({toogleCartHidden, ItemCount}) => {
-    console.log(ItemCount);
     return (
         <div onClick={toogleCartHidden} style={{transition: "all .2s"}}>
             <Badge badgeContent={ItemCount}  showZero color="secondary">
