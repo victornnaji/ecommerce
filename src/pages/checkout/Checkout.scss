@@ -1,0 +1,48 @@
+.checkout-container{
+    margin-top: 2rem;
+}
+
+.checkout-heading{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+
+    & .text{
+        font-weight: bold;
+    }
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1024px){
+        flex-direction: column-reverse;
+    }
+}
+
+.total-checkout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+
+    & .total{
+        font-size: 1.3rem;
+        font-weight: bold;
+    }
+
+    @media (max-width: 1024px){
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+
+}
+
+.empty-cart{
+    display: flex !important;
+    justify-content: center;
+    margin: 2rem 0;
+}

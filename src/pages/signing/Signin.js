@@ -9,7 +9,7 @@ const Signin = () => {
         <div className="signin-container">
             <div className="container">
                 <div className="goback-container">
-                    <GoBack />
+                    <GoBack text="Go back"/>
                 </div>
                 <div className="content">
                     <div><SignIn /></div> 

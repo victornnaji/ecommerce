@@ -6,8 +6,14 @@ import {connect} from "react-redux";
 import { selectCartItems } from '../../redux/cart/cart.selector';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import {withRouter} from "react-router-dom";
+import { toogleCartHidden } from '../../redux/cart/card.action';
 
-const CartDropdown = ({cartItem, history}) => {
+const CartDropdown = ({cartItem, history, toogleCartHidden}) => {
+    const handleClick = (e) => {
+        e.preventDefault();
+        history.push("/checkout");
+        toogleCartHidden();
+    }
     return (
         <div className="cart-dropdown">
             <div className="cart-items">
@@ -23,7 +29,7 @@ const CartDropdown = ({cartItem, history}) => {
                 )
                 }
             </div>
-            <CustomButton onClick={() => history.push("/checkout")}>Checkout</CustomButton>
+            <CustomButton onClick={handleClick}>Checkout</CustomButton>
         </div>
     )
 };
@@ -32,4 +38,8 @@ const mapStateToProps = (state) => ({
     cartItem : selectCartItems(state)
 })
 
-export default withRouter(connect(mapStateToProps)(CartDropdown));
+const mapDispatchToProp = dispatch => ({
+    toogleCartHidden: () => dispatch(toogleCartHidden())
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProp)(CartDropdown));
