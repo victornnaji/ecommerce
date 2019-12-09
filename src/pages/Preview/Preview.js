@@ -6,7 +6,6 @@ import {createStructuredSelector} from "reselect";
 
 
 const Preview = ({collections}) => {
-    console.log([collections])
     return (
         <div className="preview-container">
             {collections.map(({id, ...others}) => (
