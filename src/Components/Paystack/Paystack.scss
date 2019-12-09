@@ -1,0 +1,21 @@
+.payButton{
+    border: none;
+    background-color:#FBB03B;
+    padding: .5rem 2rem;
+    border-radius: 30px;
+    text-align: center;
+
+    &:hover, &:active, &:focus{
+        background-color: darken(#FBB03B, 10);
+        color: #fff;
+        outline: none;
+    }
+
+
+
+    @media(max-width: 1024px){
+        font-size: 1rem;
+        padding: .2rem 3rem;
+        width: 100%;
+    }
+}
