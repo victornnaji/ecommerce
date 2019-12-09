@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-    {
+const SHOP_DATA = {
+    kids:{
       id: 1,
       title: 'Kids',
       routeName: 'kids',
@@ -84,7 +84,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+    womens:{
       id: 2,
       title: 'Womens',
       routeName: 'womens',
@@ -167,7 +167,7 @@ const SHOP_DATA = [
         }
       ]
     },
-    {
+   mens: {
       id: 3,
       title: 'Mens',
       routeName: 'mens',
@@ -248,18 +248,18 @@ const SHOP_DATA = [
         }
       ]
     }
-  ];
+};
 
-  let latest = SHOP_DATA.map(item => item.items.filter(x => x.newIn));
+  let latest = Object.values(SHOP_DATA).map(item => item.items.filter(x => x.newIn));
   latest = latest.reduce((acc, val) => acc.concat(val), []);
 
   const newCol = {
       id: 4,
       title:"latest collection",
-      routeName: "latest-collection",
+      routeName: "latest",
       items: latest
   }
 
-  SHOP_DATA.push(newCol);
+  SHOP_DATA.latest = newCol;
 
   export default SHOP_DATA;
