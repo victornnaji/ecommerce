@@ -6,7 +6,6 @@ import "./Checkout.scss";
 import {connect} from "react-redux";
 import {createStructuredSelector} from "reselect";
 import {selectCartItems, selectCartTotal} from "../../redux/cart/cart.selector";
-import Button from "../../Components/button/Button"
 import CheckoutItems from '../../Components/checkout-item/CheckoutItems';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
