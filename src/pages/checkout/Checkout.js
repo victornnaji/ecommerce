@@ -16,6 +16,8 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Selected from '../../Components/Selected/Selected';
+import Paystack from '../../Components/Paystack/Paystack';
+import { toMoney } from '../../util';
 
 const useStyles = makeStyles({
     root: {
@@ -76,8 +78,8 @@ const Checkout = ({cartItem, cartTotal}) => {
                         <GoBack text="Continue Shopping" />
                     </div>
                     <div className="total-checkout">
-                        <div className="total">Total Cost: ${cartTotal.toFixed(2)}</div>
-                        <div className="checkout"><Button text="CheckOut" color="#FBB03B"/></div>
+                        <div className="total">Total Cost: ₦{toMoney(cartTotal)}</div>
+                        <div className="checkout"><Paystack amount={cartTotal*100}/></div>
                     </div>
                  </div>
 

@@ -14,7 +14,7 @@ const BannerList = () => {
         },
 
         {
-            title: 'Basic t-shirts $29,99',
+            title: 'Basic t-shirts ₦29,990',
             imageUrl: "images/beach_tshirt.png",
             id: 2,
             width: "22rem",

@@ -8,7 +8,7 @@ const ChooseList = () => {
             id: 1,
             imageUrl: require('../../../assets/ship.png'),
             title: "Free Shipping",
-            desc: "All purchases over $199 are eligible for free shipping via USPS First Class Mail."
+            desc: "All purchases over ₦19,000 are eligible for free shipping via USPS First Class Mail."
         },
         {
             id: 2,

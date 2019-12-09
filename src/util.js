@@ -7,3 +7,9 @@ export function shuffle(array) {
     }
     return array;
 }
+
+export function toMoney(money){
+   return Math.ceil(money)
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+}

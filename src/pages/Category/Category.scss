@@ -16,6 +16,14 @@
 .title{
     font-size: 1.4rem;
     text-transform: uppercase;
+
+    @media(max-width:1024px){
+        font-size: 1.2rem;
+    }
+}
+
+.heading-filter{
+    font-size: .8rem;
 }
 
 .sidebar{
@@ -28,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+    align-items: center;
 }
 
 .display{
