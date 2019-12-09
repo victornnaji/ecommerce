@@ -26,9 +26,9 @@ const Menu = ({currentUser, hidden}) => {
                     </Link>
                 </div>
                 <div className="menu-items">
-                    <Link to ="/men" className="menu-item">Men</Link>
-                    <Link to ="/women" className="menu-item">Women</Link>
-                    <Link to ="/kids" className="menu-item">Kids</Link>
+                    <Link to ="/shop/mens" className="menu-item">Men</Link>
+                    <Link to ="/shop/womens" className="menu-item">Women</Link>
+                    <Link to ="/shop/kids" className="menu-item">Kids</Link>
                 </div>
                 <div className="menu-icons">
                     <div className="search">

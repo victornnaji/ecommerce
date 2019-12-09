@@ -7,6 +7,7 @@ import { addItem } from '../../redux/cart/card.action';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+import { toMoney } from '../../util';
 
 const Imagecollection = ({item, addItem}) => {
     const [open, setOpen] = React.useState(false);
@@ -34,8 +35,8 @@ const Imagecollection = ({item, addItem}) => {
                 <div className="collection-footer">
                     <div className="name">{name}</div>
                     <div className="prices">
-                        <div className="newprice">{`$${price}`}</div>
-                        {oldPrice !== undefined && <div className="oldPrice">{`$${oldPrice}`}</div> }
+                        <div className="newprice">{`₦${toMoney(price)}`}</div>
+                        {oldPrice !== undefined && <div className="oldPrice">{`₦${toMoney(oldPrice)}`}</div> }
                     </div>
                     <div className="btn" onClick={handleClick}>
                        <CustomButton>Add to cart </CustomButton>

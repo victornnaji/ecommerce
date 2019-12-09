@@ -7,6 +7,7 @@ import { clearItemFromCart , addItem, removeItem} from '../../redux/cart/card.ac
 import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 import DeleteIcon from '@material-ui/icons/Delete';
+import { toMoney } from '../../util';
 
 
 
@@ -25,7 +26,7 @@ const CheckoutItems = ({cart, clearItem, addItem, removeItem}) => {
                     <div className="arrow"><ArrowRightIcon onClick={() => addItem(cart)} fontSize="large"/></div>
                 </div>
             </TableCell>
-            <TableCell align="left">${cart.price}</TableCell>
+            <TableCell align="left">₦{toMoney(cart.price)}</TableCell>
             <TableCell onClick={() => clearItem(cart)} align="left" style={{fontSize:'1.5rem', marginLeft:'-1rem', cursor:'pointer', color:'‎#FF0000'}}><DeleteIcon/></TableCell>
         </TableRow>
     )

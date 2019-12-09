@@ -52,13 +52,13 @@ const useStyles = makeStyles({
                     <Link to ="/" className="menu-item">Home</Link>
               </ListItem>
               <ListItem button key="1">
-                    <Link to ="/men" className="menu-item">Men</Link>
+                    <Link to ="/shop/mens" className="menu-item">Men</Link>
               </ListItem>
               <ListItem button key="2">
-                    <Link to ="/women" className="menu-item">Women</Link>
+                    <Link to ="/shop/womens" className="menu-item">Women</Link>
               </ListItem>
               <ListItem button key="3">
-                    <Link to ="/kids" className="menu-item">Kids</Link>
+                    <Link to ="/shop/kids" className="menu-item">Kids</Link>
               </ListItem>
           </List>
           <Divider />
