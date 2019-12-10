@@ -27,7 +27,7 @@ Demo site is here: [LawnMower-Clothings](https://lawnmower-clothings.herokuapp.c
           );
     ```
 3. Higher Order Components
-4. Redyx Logger
+4. Redux Logger
 
 ## Usuage
  * Fork the Repo
