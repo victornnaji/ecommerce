@@ -38,7 +38,7 @@ Demo site is here: [LawnMower-Clothings](https://lawnmower-clothings.herokuapp.c
  * Clone the repo on your local machine
 
     ```bash
-        git clone https://github.com/Nnaji-Victor/ecommerce.github
+        git clone https://github.com/Nnaji-Victor/ecommerce.git
     ```
  * Run the App with
 
