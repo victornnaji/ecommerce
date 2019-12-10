@@ -2,4 +2,4 @@
 
 Demo site is here: [LawnMower-Clothings](https://lawnmower-clothings.herokuapp.com/)
 
-
+![Screenshot](images/Screenshot1.png)
