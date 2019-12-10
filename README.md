@@ -1,2 +1,5 @@
-# ecommerce
-E-commerce website with React
+# 🛍 Ecommerce Store Built with React, Redux, Firebase, Paystack and hosted on Heroku
+
+Demo site is here: [LawnMower-Clothings](https://lawnmower-clothings.herokuapp.com/)
+
+
