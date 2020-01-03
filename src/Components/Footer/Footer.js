@@ -36,7 +36,7 @@ const Footer = () => {
                             </div>
 
                             <div className="footer-desc">
-                                Website designed bu UIKIT and brought to life by Nnaji Victor. Built with React, Redux,
+                                Website designed bu UIKIT. Built with React, Redux,
                                 firebase, redux saga etc.
                             </div>
 
@@ -67,14 +67,15 @@ const Footer = () => {
                         </div>
                         <div className="footer-menu-item">
                             <p>Contact</p>
-                            <p>victornnaji.c@gmail.com</p>
-                            <p>+2347017510120</p>
+                            {/* <p>victornnaji.c@gmail.com</p> */}
+                            {/* <p>+2347017510120</p> */}
+                            <p>Lawnmower office</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="copyright">
-            DESIGN BY NNAJI VICTOR -© {new Date().getFullYear()}. ALL RIGHTS RESERVED.
+            LawnMower clothings -© {new Date().getFullYear()}. ALL RIGHTS RESERVED.
             </div>
         </div>
     )
